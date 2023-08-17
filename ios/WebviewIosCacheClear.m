@@ -5,9 +5,8 @@
 RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(
-  clearWebViewIOSCache:(RCTPromiseResolveBlock)
-  resolver:(RCTPromiseResolveBlock)resolve
-  rejecter:(RCTPromiseRejectBlock)reject)
+  clearWebViewIOSCache:(RCTPromiseResolveBlock)resolve
+  reject:(RCTPromiseRejectBlock)reject)
 {
   
   NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes];
