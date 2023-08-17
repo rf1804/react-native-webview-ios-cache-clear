@@ -41,7 +41,8 @@
   },
   "homepage": "https://github.com/rf1804/react-native-webview-ios-cache-clear#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^11.0.0",
