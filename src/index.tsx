@@ -17,6 +17,8 @@ const WebviewIosCacheClear = NativeModules.WebviewIosCacheClear
       },
     );
 
-export function clearWebViewIOSCache(): Promise<number> {
-  return WebviewIosCacheClear.clearWebViewIOSCache();
+export function clearWebViewIOSCache() {
+  if (Platform.OS === 'ios') {
+    return WebviewIosCacheClear.clearWebViewIOSCache();
+  }
 }
