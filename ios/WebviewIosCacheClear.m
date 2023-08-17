@@ -1,16 +1,19 @@
 #import "WebviewIosCacheClear.h"
-#import "webkit/wkwebsitedatastore.h"
 
 @implementation WebviewIosCacheClear
 
 RCT_EXPORT_MODULE()
 
-RCT_REMAP_METHOD(clearWebViewIOSCache:(rctpromiseresolveblock)resolve reject:(rctpromiserejectblock)reject){
+RCT_EXPORT_METHOD(
+  clearWebViewIOSCache:(RCTPromiseResolveBlock)
+  resolver:(RCTPromiseResolveBlock)resolve
+  rejecter:(RCTPromiseRejectBlock)reject)
+{
   
-  nsset *websitedatatypes = [wkwebsitedatastore allwebsitedatatypes];
-  nsdate *datefrom = [nsdate datewithtimeintervalsince1970:0];
+  NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes];
+  NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0];
   dispatch_async(dispatch_get_main_queue(), ^{
-    [[wkwebsitedatastore defaultdatastore] removedataoftypes:websitedatatypes modifiedsince:datefrom completionhandler:^{
+    [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{
       return resolve(@"ok");
     }];
   });
