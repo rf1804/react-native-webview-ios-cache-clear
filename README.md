@@ -13,8 +13,6 @@ yarn add react-native-webview-ios-cache-clear
 ```js
 import {clearWebViewIOSCache} from 'react-native-webview-ios-cache-clear';
 
-// ...
-
 const result = await clearWebViewIOSCache();
 ```
 
